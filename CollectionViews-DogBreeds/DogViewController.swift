@@ -47,6 +47,8 @@ class DogViewController: UIViewController {
 
 extension DogViewController: UICollectionViewDataSource {
     
+    // this is to populate collection view with our data
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dogImages.count
     }
@@ -63,6 +65,8 @@ extension DogViewController: UICollectionViewDataSource {
 
 extension DogViewController: UICollectionViewDelegateFlowLayout {
     
+    // this is where we determine the size of the items, the appearance of layout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let interItemSpacing: CGFloat = 10 // space between items
@@ -75,6 +79,10 @@ extension DogViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
 }
